@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+}
+
+.panel {
+  height: 90vh;
+  margin: 1rem;
+  border-radius: 5rem;
+  background-size: cover;
+  background-position: center center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+  cursor: pointer;
+}
+
+.active {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+
+.panel .heading {
+  opacity: 0;
+}
+
+.active .heading {
+  font-size: 1.6rem;
+  color: #fff;
+  position: absolute;
+  bottom: 5rem;
+  left: 2.5rem;
+  -webkit-animation: moveFromTop .5s ease-in .5s backwards;
+          animation: moveFromTop .5s ease-in .5s backwards;
+  opacity: 1;
+}
+
+.active .heading::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 500px) {
+  .active .heading::after {
+    display: none;
+  }
+}
+
+@-webkit-keyframes moveFromTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-4.5rem);
+            transform: translateY(-4.5rem);
+  }
+  85% {
+    -webkit-transform: translateY(0.5rem);
+            transform: translateY(0.5rem);
+    opacity: .8;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes moveFromTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-4.5rem);
+            transform: translateY(-4.5rem);
+  }
+  85% {
+    -webkit-transform: translateY(0.5rem);
+            transform: translateY(0.5rem);
+    opacity: .8;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+/*# sourceMappingURL=style.css.map */
